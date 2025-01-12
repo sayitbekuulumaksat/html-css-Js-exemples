@@ -1,0 +1,65 @@
+
+
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  max-width: 350px;
+  margin: 100px auto;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 51px;
+}
+
+label{
+  font-size: 25px;
+}
+input{
+  border-radius: 4px;
+  border-color: rgb(219, 219, 219);
+  min-height: 40px;
+  margin: 15px 0;
+}
+button{
+  min-height: 35px;
+  border-radius: 4px;
+  border-color: rgb(219, 219, 219);
+}
+
+.todo-list{
+  border: 1px solid black;
+  min-height: 40px;
+  padding: 15px;
+  border-radius: 5px;
+}
+h2{
+  font-size: 25px;
+}
+
+.todo-item{
+  background: hsla(0, 0%, 0%, 0.205);
+  margin-bottom: 5px;
+  padding: 6px ;
+  border-radius: 5px;
+  text-align: left;
+}
