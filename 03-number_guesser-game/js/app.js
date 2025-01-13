@@ -19,34 +19,21 @@ guessBtn.addEventListener("click", function () {
   // validation
   if (isNaN(guess) || guess < min || guess > max) {
     setMessage(`Нужно ввести число от ${min} до ${max}`, "red");
-  }
-
-  // check if won
-  if (guess === winningNum) {
-    /* guessInput.disabled = true;
-    guessInput.style.border = "1px solid green";
-    setMessage(`Поздравляю! Вы угадали число ${winningNum}`, "green"); */
-
-    gameOver(true, `Поздравляю! Вы угадали число ${winningNum}`);
   } else {
-    guessesLeft -= 1;
-
-    if (guessesLeft === 0) {
-      // lost
-      /*  guessInput.disabled = true;
-      guessInput.style.border = "1px solid red";
-      setMessage(`Вы проиграли! Правильный ответ ${winningNum}`, "red"); */
-
-      gameOver(false, `Вы проиграли! Правильный ответ ${winningNum}`);
+    if (guess === winningNum) {
+      gameOver(true, `Поздравляю! Вы угадали число ${winningNum}`);
     } else {
-      // continues
+      guessesLeft -= 1;
 
-      guessInput.style.border = "1px solid red";
-
-      guessInput.value = "";
-      setMessage(`Неверно! У вас осталось ${guessesLeft} попыток`, "red");
+      if (guessesLeft === 0) {
+        gameOver(false, `Вы проиграли! Правильный ответ ${winningNum}`);
+      } else {
+        guessInput.style.border = "1px solid red";
+        setMessage(`Неверно! У вас осталось ${guessesLeft} попыток`, "red");
+      }
     }
   }
+  guessInput.value = "";
 });
 
 // play again
