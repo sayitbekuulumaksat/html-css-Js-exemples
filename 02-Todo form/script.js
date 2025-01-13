@@ -6,15 +6,17 @@ window.addEventListener("load", function () {
   todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    if (todoInput.value !== "") {
+    if (todoInput.value === "") {
+      alert("add to do");
+    } else {
       const todoItim = document.createElement("div");
       todoItim.innerText = todoInput.value;
       todoItim.classList.add("todo-item");
       todoList.appendChild(todoItim);
       todoInput.value = "";
+      todoItim.addEventListener("click", function () {
+        todoItim.style.display = "none";
+      });
     }
-    todoItim.addEventListener("click", function () {
-      todoItim.style.display = "none";
-    });
   });
 });
